@@ -1,0 +1,17 @@
+
+<ul>
+<% @movies.each do |movie| %>
+<li><strong><%= movie.name %><strong> | Rating: <%= movie.rating%>, 
+sold at: <%= price(movie) %>
+</li>
+<p>
+<%= movie.description %>
+</p>
+
+<p>
+<%= date_and_time(movie) %>
+</p>
+<% end %>
+</ul>
+
+
