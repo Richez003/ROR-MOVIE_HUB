@@ -1,0 +1,28 @@
+
+<section class="movies_details">
+   <div class="image">
+<%= image_tag @movie.image_file_name %>
+</div>
+   <div class="details">
+
+     <h2><%=  @movie.name %><h2> 
+     <h3><%= date_and_time(@movie) %> 
+     </h3>
+     <span>
+      <%= pluralize(@movie.capacity, "spot") %> &bull; <%= price(@movie) %>
+     </span>
+     <p>
+     <%= @movie.description %>
+     </p>
+     </div>
+
+
+</section>
+<div>
+<%= link_to "Edit", edit_movie_path(@movie), class: "button" %>
+
+<%= button_to "Delete", movie_path(@movie.id), method: :delete, class: "button", data: { confirm: "really?" } %>
+</div>
+
+
+
